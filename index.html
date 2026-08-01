@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SharedHub - Document Downloads</title>
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            /* Beautiful animated gradient background */
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            color: #333;
+            padding: 20px;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Glassmorphism Header */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+            animation: fadeInDown 1s ease;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        /* Grid Layout for PDFs */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* Glassmorphism Cards */
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: fadeInUp 1s ease forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Stagger card animations */
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px 0 rgba(31, 38, 135, 0.3);
+        }
+
+        .icon {
+            font-size: 3.5em;
+            color: #ff4757;
+            margin-bottom: 15px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover .icon {
+            transform: scale(1.1);
+        }
+
+        .title {
+            font-weight: 600;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #2f3542;
+        }
+
+        .desc {
+            font-size: 0.9em;
+            color: #747d8c;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, #ff4757, #ff6b81);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
+        }
+
+        .btn:hover {
+            background: linear-gradient(45deg, #ff6b81, #ff4757);
+            box-shadow: 0 6px 20px rgba(255, 71, 87, 0.5);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>📚 SharedHub</h1>
+            <p>Download our shared study materials and documents easily.</p>
+        </div>
+
+        <!-- PDF Cards Section -->
+        <div class="grid">
+            
+            <!-- Item 1 -->
+            <div class="card">
+                <div class="icon"><i class="fas fa-file-pdf"></i></div>
+                <div class="title">Web Design Tutorial</div>
+                <div class="desc">Size: 2.4 MB</div>
+                <!-- මෙතන href="" ඇතුලේ ඔයාගේ pdf ෆයිල් එකේ නම දෙන්න -->
+                <a href="pdfs/web-design.pdf" class="btn" download>Download</a>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="card">
+                <div class="icon"><i class="fas fa-file-pdf"></i></div>
+                <div class="title">Networking Basics</div>
+                <div class="desc">Size: 1.8 MB</div>
+                <a href="pdfs/networking.pdf" class="btn" download>Download</a>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="card">
+                <div class="icon"><i class="fas fa-file-pdf"></i></div>
+                <div class="title">Software Engineering</div>
+                <div class="desc">Size: 3.1 MB</div>
+                <a href="pdfs/software-eng.pdf" class="btn" download>Download</a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
